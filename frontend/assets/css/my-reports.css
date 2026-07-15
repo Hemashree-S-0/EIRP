@@ -1,0 +1,7 @@
+body {
+  background: linear-gradient(135deg, #f4fbf2, #e5f3e1);
+  color: #1d3d2a;
+}
+.table thead {
+  background: #eef9eb;
+}

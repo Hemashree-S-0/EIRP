@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Environmental Incident Reporting</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>Environmental Incident Reporting Portal</h1>
+
+<form id="incidentForm">
+
+<input
+type="text"
+id="title"
+placeholder="Incident Title"
+required>
+
+<select id="category">
+
+<option>Air Pollution</option>
+<option>Water Pollution</option>
+<option>Waste Dumping</option>
+<option>Noise Pollution</option>
+
+</select>
+
+<textarea
+id="description"
+placeholder="Description">
+</textarea>
+
+<input
+type="text"
+id="location"
+placeholder="Location">
+
+<select id="severity">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+
+</select>
+
+<button type="submit">
+Submit Report
+</button>
+
+</form>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

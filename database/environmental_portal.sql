@@ -1,0 +1,64 @@
+CREATE DATABASE IF NOT EXISTS environmental_portal;
+USE environmental_portal;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  full_name VARCHAR(150) NOT NULL,
+  email VARCHAR(150) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(30) NOT NULL DEFAULT 'citizen',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS incidents (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  category VARCHAR(100) NOT NULL,
+  description TEXT NOT NULL,
+  incident_date DATE,
+  incident_time TIME,
+  location VARCHAR(255),
+  latitude DECIMAL(10, 7),
+  longitude DECIMAL(10, 7),
+  severity VARCHAR(20),
+  status VARCHAR(30) DEFAULT 'submitted',
+  submitted_by INT,
+  assigned_to INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS incident_images (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  incident_id INT NOT NULL,
+  file_path VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  incident_id INT NOT NULL,
+  author VARCHAR(150) NOT NULL,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS notifications (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  message TEXT NOT NULL,
+  read_flag BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS audit_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  actor VARCHAR(150),
+  action VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL UNIQUE,
+  description TEXT
+);

@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+.login-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Left Panel ── */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(145deg, #0a2e1a, #1a6b3a, #0f4d28);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.left-panel::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+}
+
+.left-panel::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+  bottom: -80px;
+  right: -80px;
+}
+
+.left-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 48px;
+  max-width: 420px;
+}
+
+.brand-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.brand-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #fff;
+}
+
+.brand-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+}
+
+.feature-item i {
+  font-size: 1.2rem;
+  color: #5ddb8a;
+  width: 24px;
+}
+
+/* ── Right Panel ── */
+.right-panel {
+  width: 480px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+}
+
+@media (max-width: 991px) {
+  .right-panel {
+    width: 100%;
+    padding: 40px 24px;
+  }
+}
+
+.form-box {
+  width: 100%;
+  max-width: 380px;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f3d24;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+/* ── Input Groups ── */
+.input-group-custom {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #1a6b3a;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 14px;
+  left: auto;
+  color: #6c757d;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.input-icon-right:hover {
+  color: #1a6b3a;
+}
+
+.form-input {
+  width: 100%;
+  padding: 13px 42px 13px 42px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #212529;
+  background: #f8faf9;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #1a6b3a;
+  box-shadow: 0 0 0 3px rgba(26,107,58,0.12);
+  background: #fff;
+}
+
+.form-input::placeholder {
+  color: #adb5bd;
+}
+
+/* ── Remember / Forgot ── */
+.remember-label {
+  font-size: 0.88rem;
+  color: #495057;
+}
+
+.forgot-link {
+  font-size: 0.88rem;
+  color: #1a6b3a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Login Button ── */
+.btn-login {
+  background: linear-gradient(135deg, #1a6b3a, #0f3d24);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-login:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #adb5bd;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e9ecef;
+}
+
+/* ── Register Link ── */
+.register-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.register-link {
+  color: #1a6b3a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Alert ── */
+.alert {
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+}

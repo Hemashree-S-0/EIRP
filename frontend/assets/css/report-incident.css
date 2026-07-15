@@ -1,0 +1,9 @@
+body {
+  background: linear-gradient(135deg, #f3fbef, #e4f2df);
+  color: #1d3d2a;
+}
+#map {
+  height: 320px;
+  border: 1px solid #d4e7ce;
+  border-radius: 16px;
+}

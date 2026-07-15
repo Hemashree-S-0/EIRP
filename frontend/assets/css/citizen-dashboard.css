@@ -1,0 +1,81 @@
+body {
+  background: #f4f6f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a2e1a, #1a6b3a);
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.main-content {
+  background: #f4f6f9;
+}
+
+.stat-card {
+  border-radius: 14px;
+  transition: transform 0.15s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.bg-primary-soft { background: #e8f0fe; }
+.bg-warning-soft { background: #fff8e1; }
+.bg-success-soft { background: #e8f5e9; }
+.bg-danger-soft  { background: #fdecea; }
+
+.table thead th {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table tbody tr:hover {
+  background: #f8fdf9;
+}
+
+.modal-content {
+  border-radius: 16px;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #0a2e1a, #1a6b3a);
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}

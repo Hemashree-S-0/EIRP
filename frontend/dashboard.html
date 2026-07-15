@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<div class="card">
+
+<h2>Total Incidents</h2>
+
+<h1 id="count">0</h1>
+
+</div>
+
+<script>
+
+fetch("http://localhost:3000/api/dashboard")
+.then(res => res.json())
+.then(data => {
+
+document.getElementById("count").innerText =
+data.totalIncidents;
+
+});
+
+</script>
+
+</body>
+</html>
